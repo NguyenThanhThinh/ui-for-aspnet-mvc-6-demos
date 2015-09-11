@@ -1,6 +1,7 @@
 # Kendo UI for ASP.NET MVC 6 demos
 
-## [ASP.NET MVC Beta 7](https://github.com/aspnet/Mvc/milestones)
+Releases
+* [Beta 7](https://github.com/telerik/ui-for-aspnet-mvc-6-demos/releases/tag/beta-7)
 
 This repository contains the Kendo UI for ASP.NET MVC examples built against MVC 6 beta releases.
 
