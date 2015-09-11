@@ -1,4 +1,4 @@
-# Kendo UI for ASP.NET MVC 6 demo project
+# Kendo UI for ASP.NET MVC 6 demos
 
 ## [ASP.NET MVC Beta 7](https://github.com/aspnet/Mvc/milestones)
 
