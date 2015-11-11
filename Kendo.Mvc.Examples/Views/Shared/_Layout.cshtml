@@ -3,14 +3,16 @@
 <head>
     <title>@ViewBag.Title</title>
 
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2015.2.902/styles/kendo.common.min.css">
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2015.2.902/styles/kendo.rtl.min.css">
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2015.2.902/styles/kendo.default.min.css">
+    <link rel="stylesheet" href="~/lib/kendo/css/web/kendo.common.min.css" />
+	<link rel="stylesheet" href="~/lib/kendo/css/web/kendo.rtl.min.css" />
+    <link rel="stylesheet" href="~/lib/kendo/css/web/kendo.default.min.css" />
+    <link rel="stylesheet" href="~/lib/kendo/css/dataviz/kendo.dataviz.min.css" />
+    <link rel="stylesheet" href="~/lib/kendo/css/dataviz/kendo.dataviz.default.min.css" />    
 	<link rel="stylesheet" href="~/shared/examples-offline.css" />
 
-    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="https://kendo.cdn.telerik.com/2015.2.902/js/kendo.all.min.js"></script>
-    <script src="https://kendo.cdn.telerik.com/2015.2.902/js/kendo.aspnetmvc.min.js"></script>
+    <script src="~/lib/kendo/js/jquery.min.js"></script>
+    <script src="~/lib/kendo/js/kendo.all.min.js"></script>
+	<script src="~/lib/kendo/js/kendo.aspnetmvc.min.js"></script>
     <script src="~/shared/console.js"></script>
 	<script src="~/shared/prettify.js"></script>
 
@@ -19,7 +21,7 @@
 		var culture = System.Globalization.CultureInfo.CurrentCulture.ToString();
 	}	
 
-	<script src="@("https://kendo.cdn.telerik.com/2015.2.902/js/cultures/kendo.culture." + culture + ".min.js")"></script>
+	<script src="@("/lib/kendo/js/cultures/kendo.culture." + culture + ".min.js")"></script>
 
 	<script>
 		@* Set the current culture *@
