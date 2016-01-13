@@ -41,7 +41,7 @@
                 duration: 300
             }
         },
-        skinRegex = /kendo\.[\w\-]+(\.min)?\.(less|css)/i;
+        skinRegex = /kendo\.[\w\-]+(\.min)?\.css/i;
 
     var Details = kendo.ui.Widget.extend({
         init: function(element, options) {
@@ -58,7 +58,6 @@
             name: "Details"
         },
         toggle: function() {
-            var options = this.options;
             var show = this._container.is(":visible");
             var animation = kendo.fx(this._container).expand("vertical");
 
@@ -130,22 +129,22 @@
 
     var ThemeChooserViewModel = kendo.observable({
         themes: [
-            { value: "default", name: "Default", colors: [ "#ef6f1c", "#e24b17", "#5a4b43" ]  },
+            { value: "black", name: "Black", colors: [ "#0167cc", "#4698e9", "#272727" ]  },
             { value: "blueopal", name: "Blue Opal", colors: [ "#076186", "#7ed3f6", "#94c0d2" ]  },
             { value: "bootstrap", name: "Bootstrap", colors: [ "#3276b1", "#67afe9", "#fff" ]  },
-            { value: "silver", name: "Silver", colors: [ "#298bc8", "#515967", "#eaeaec" ]  },
-            { value: "uniform", name: "Uniform", colors: [ "#666", "#ccc", "#fff" ]  },
-            { value: "metro", name: "Metro", colors: [ "#8ebc00", "#787878", "#fff" ]  },
-            { value: "black", name: "Black", colors: [ "#0167cc", "#4698e9", "#272727" ]  },
-            { value: "metroblack", name: "Metro Black", colors: [ "#00aba9", "#0e0e0e", "#565656" ]  },
-            { value: "highcontrast", name: "High Contrast", colors: [ "#b11e9c", "#880275", "#1b141a" ]  },
-            { value: "moonlight", name: "Moonlight", colors: [ "#ee9f05", "#40444f", "#212a33" ]  },
+            { value: "default", name: "Default", colors: [ "#ef6f1c", "#e24b17", "#5a4b43" ]  },
+            { value: "fiori", name: "Fiori", colors: ["#007cc0", "#e6f2f9", "#f0f0f0"] },
             { value: "flat", name: "Flat", colors: [ "#363940", "#2eb3a6", "#fff" ]  },
+            { value: "highcontrast", name: "High Contrast", colors: [ "#b11e9c", "#880275", "#1b141a" ]  },
             { value: "material", name: "Material", colors: [ "#3f51b5", "#283593", "#fff" ]  },
             { value: "materialblack", name: "Material Black", colors: ["#3f51b5", "#1c1c1c", "#4d4d4d"] },
-            { value: "fiori", name: "Fiori", colors: ["#007cc0", "#e6f2f9", "#f0f0f0"] },
+            { value: "metro", name: "Metro", colors: [ "#8ebc00", "#787878", "#fff" ]  },
+            { value: "metroblack", name: "Metro Black", colors: [ "#00aba9", "#0e0e0e", "#565656" ]  },
+            { value: "moonlight", name: "Moonlight", colors: [ "#ee9f05", "#40444f", "#212a33" ]  },
+            { value: "nova", name: "Nova", colors: ["#ff4350", "#00acc1", "#303553"] },
             { value: "office365", name: "Office 365", colors: ["#0072c6", "#cde6f7", "#fff"] },
-            { value: "nova", name: "Nova", colors: ["#ff4350", "#00acc1", "#303553"] }
+            { value: "silver", name: "Silver", colors: [ "#298bc8", "#515967", "#eaeaec" ]  },
+            { value: "uniform", name: "Uniform", colors: [ "#666", "#ccc", "#fff" ]  }
         ],
         sizes: [
             { name: "Standard", value: "common" },
@@ -197,13 +196,13 @@
         getCommonUrl: function (common) {
             var currentCommonUrl = ThemeChooser.getCurrentCommonLink().attr("href");
 
-            return currentCommonUrl.replace(skinRegex, "kendo." + common + "$1.$2");
+            return currentCommonUrl.replace(skinRegex, "kendo." + common + "$1.css");
         },
 
         getThemeUrl: function (themeName) {
             var currentThemeUrl = ThemeChooser.getCurrentThemeLink().attr("href");
 
-            return currentThemeUrl.replace(skinRegex, "kendo." + themeName + "$1.$2");
+            return currentThemeUrl.replace(skinRegex, "kendo." + themeName + "$1.css");
         },
 
         replaceCommon: function(commonName) {
@@ -216,21 +215,8 @@
 
         updateLink: function(link, url) {
             var exampleElement = $("#example");
-            var less = window.less;
-            var isLess = /\.less$/.test(link.attr("href"));
-            var browser = kendo.support.browser;
 
             link.eq(0).attr("href", url);
-
-            if (isLess) {
-                $("head style[id^='less']").remove();
-
-                less.sheets = $("head link[href$='.less']").map(function () {
-                    return this;
-                });
-
-                less.refresh(true);
-            }
 
             if (exampleElement.length) {
                 exampleElement[0].style.cssText = exampleElement[0].style.cssText;
@@ -322,7 +308,7 @@
             });
         },
 
-        changeCommon: function(commonName, animate) {
+        changeCommon: function(commonName) {
             ThemeChooser.animateCssChange({
                 prefetch: ThemeChooser.getCommonUrl(commonName),
                 replace: function() {
@@ -348,7 +334,7 @@
             }
         },
 
-        changeThemePair: function(themeName, commonName, animate) {
+        changeThemePair: function(themeName, commonName) {
             var deferred = $.Deferred();
 
             ThemeChooser.animateCssChange({

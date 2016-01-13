@@ -56,11 +56,11 @@
 /* Widgets icons font */
 @font-face {
   font-family: 'widgets';
-  src: url('fonts/widgets-v2.eot');
-  src: url('fonts/widgets-v2.eot?#iefix') format('embedded-opentype'),
-       url('fonts/widgets-v2.woff') format('woff'),
-       url('fonts/widgets-v2.ttf') format('truetype'),
-       url('fonts/widgets-v2.svg') format('svg');
+  src: url('fonts/widgets-v3.eot');
+  src: url('fonts/widgets-v3.eot?#iefix') format('embedded-opentype'),
+       url('fonts/widgets-v3.woff') format('woff'),
+       url('fonts/widgets-v3.ttf') format('truetype'),
+       url('fonts/widgets-v3.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -577,6 +577,7 @@ div.submenu-box ol {
 .chartWaterfallIcon:after { content: '\e847'; }
 .comboBoxIcon:after { content: '\e848'; }
 .responsivePanelIcon:after { content: '\e849'; }
+.spreadsheetIcon:after { content: '\e84b'; }
 
 .themechooser
 {
@@ -719,18 +720,11 @@ div.submenu-box ol {
     transition-timing-function: ease;
 }
 
-.k-ie7 .tc-item,
 .k-ie8 .tc-item,
 .k-ie9 .tc-item
 {
     display: inline-block;
     width: 132px;
-}
-
-.k-ie7 .tc-column {
-    display: inline;
-    zoom: 1;
-    vertical-align: top;
 }
 
 .tc-item:hover
@@ -1992,7 +1986,7 @@ a.footer-links:hover,
 }
 
 #example-nav h3 {
-    padding: 1.7em 0 0.5em 3.571em;
+    padding: 1.7em 0 0.5em 3.4em;
 }
 
 #example-nav-bar {
@@ -2050,11 +2044,20 @@ a.footer-links:hover,
 
 #root-nav li a,
 #example-nav li a {
-    font-size: 14px;
-    line-height: 14px;
+    font-size: 13px;
+    line-height: 13px;
     color: #2d3e50;
     display: block;
-    padding: 0.5em 0 0.5em 3.571em;
+    padding: 0.5em 0 0.5em 3.7em;
+    transition: all .2s ease;
+}
+#example-nav li .group {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 13px;
+    color: #2d3e50;
+    display: block;
+    padding: 1.5em 0 0.25em 3.7em;
     transition: all .2s ease;
 }
 
@@ -2082,6 +2085,10 @@ a.footer-links:hover,
 #resources-technologies {
     clear: both;
     margin: 4.583em 7.500em 5.000em 7.500em;
+}
+
+#exampleWrap {
+    margin: 4.583em 6.429em 5.000em 6.429em;
 }
 
 #exampleWrap .mobileExample {
@@ -2125,13 +2132,6 @@ a.footer-links:hover,
 .try-kendo:hover {
     background-color: #013a5e;
     cursor: pointer;
-}
-
-/* Clear floats */
-.k-ie7 #header,
-.k-ie7 #codeStrip,
-.k-ie7 #overview-applications {
-    display: inline-block;
 }
 
 #header:after,
@@ -2234,6 +2234,11 @@ a.footer-links:hover,
     z-index: 3;
 }
 
+.k-ie8 #example-sidebar {
+    position: static;
+    height: 100%;
+}
+
 #main {
     float: none;
     width: auto;
@@ -2257,7 +2262,7 @@ a.footer-links:hover,
   text-decoration: none;
 }
 
-.k-ie7 #sidebar-toggle {
+.k-ie8 #sidebar-toggle {
     display: none;
 }
 
@@ -2372,6 +2377,7 @@ a.footer-links:hover,
     font-size: 14px;
     line-height: 14px;
     height: 1.143em;
+    text-indent: 2.4em;
 }
 
 #layout-search-wrapper input {
@@ -2379,22 +2385,22 @@ a.footer-links:hover,
     font-size: 16px;
     line-height: 19px;
     height: 1.188em;
-    text-indent: 0.75em;
+    text-indent: 2.4em;
 }
 
 #example-search-wrapper .k-uniE600 {
    position: absolute;
    font-size: 15px;
-   right: 8px;
+   left: 8px;
    top: 7px;
-   color: #2d3e50;
+   color: #a9a9a9;
 }
 
 #layout-search-wrapper .k-uniE600 {
    font-size: 16px;
    position: absolute;
    top: 13px;
-   right: 13px;
+   left: 13px;
    color: #000;
 }
 
@@ -2489,7 +2495,7 @@ a.footer-links:hover,
     padding-right: 20px;
 }
 
-#overview h2 {
+#overview h1 {
     color: #000;
     font: 400 28px/1 "Roboto Slab", Arial, Helvetica, sans-serif;
     text-align: left;
@@ -2566,7 +2572,7 @@ a.footer-links:hover,
     padding-bottom: 2em;
 }
 
-#overview-widgets h3 {
+#overview-widgets h2 {
     color: #000;
     font: 700 12px/1em Arial,Helvetica,sans-serif;
     text-transform: uppercase;
@@ -2638,7 +2644,7 @@ h5 {
     margin: 20px 0 0 20px;
 }
 
-#overview-widgets h2 strong {
+#overview-widgets h1 strong {
     font-weight: normal;
 }
 
@@ -2646,12 +2652,12 @@ h5 {
     padding-left: 0;
 }
 
-#most-popular h3 {
+#most-popular h2 {
     margin-left: 0;
 }
 
-#overview-widgets h2,
-#most-popular h3,
+#overview-widgets h1,
+#most-popular h2,
 #most-popular .overview-col {
     padding-left: 20px;
     padding-right: 0;
@@ -2696,12 +2702,12 @@ h5 {
 }
 
 .demo-section {
-    margin: 4.5em auto;
+    margin: 0 auto 4.5em;
     padding: 3em;
-    border: 1px solid rgba(20,53,80,0.05);
+    border: 1px solid rgba(20,53,80,0.14);
 }
 
-.demo-section:not(.wide):not(.k-content),
+.demo-section:not(.wide),
 #exampleWrap .box:not(.wide) {
     max-width: 400px;
 }
@@ -2718,7 +2724,15 @@ h5 {
     margin: 4.5em auto;
 }
 
+#example .box:first-child {
+    margin-top: 0;
+}
 
+.demo-section.k-content {
+    box-shadow: 0 1px 2px 1px rgba(0,0,0,.08), 0 3px 6px rgba(0,0,0,.08);
+}
+
+/* Remove k-header classes
 .box.k-header,
 .demo-section.k-header {
     background-position: 50% 70%;
@@ -2751,6 +2765,7 @@ html.k-materialblack .demo-section.k-content {
      color: #fff;
      font-weight: normal;
 }
+*/
 
 .box h4,
 .demo-section h4 {
@@ -2799,6 +2814,10 @@ html.k-materialblack .demo-section.k-content {
     box-shadow: none;
 }
 
+.box .k-upload-status .k-button-bare {
+    min-width: 0;
+}
+
 .box .k-button:hover,
 .box .k-button:focus:active:not(.k-state-disabled):not([disabled]),
 .box .k-button:focus:not(.k-state-disabled):not([disabled]) {
@@ -2842,6 +2861,36 @@ html.k-materialblack .demo-section.k-content {
     box-shadow: none;
 }
 
+.box.demo-description p {
+    line-height: 1.5em;
+    max-width: 1000px;
+    padding-bottom: 1em;
+}
+
+.box.demo-description p:last-child {
+    padding-bottom: 0;
+}
+
+.box.demo-description ul,
+.box.demo-description ul li {
+    list-style: disc inside;
+    line-height: 1.5em;
+    max-width: 1000px;
+}
+
+.box.demo-description ol,
+.box.demo-description ol li {
+    list-style: decimal inside;
+    line-height: 1.5em;
+    max-width: 1000px;
+}
+
+.box.demo-description ul,
+.box.demo-description ol {
+    margin: 1em;
+    padding: 0;
+}
+
 .demo-hint {
     line-height: 22px;
     color: #aaa;
@@ -2865,6 +2914,9 @@ html.k-materialblack .demo-section.k-content {
 }
 
 @media screen and (max-width: 1023px) {
+  .hidden-on-narrow {
+      display: none !important;
+  }
   .responsive-message {
     display: block;
   }
@@ -2914,7 +2966,7 @@ html.k-materialblack .demo-section.k-content {
     text-align: left;
   }
   
-  #overview h2 {
+  #overview h1 {
     padding-top: 1.2em;
   }
   
@@ -3029,7 +3081,7 @@ html.k-materialblack .demo-section.k-content {
     position: fixed;
     top: auto;
   }
-  
+
   #example-sidebar.k-rpanel-expanded {
     -webkit-box-shadow: 5px 0 15px 0 rgba(0,0,0,.15);
     -moz-box-shadow: 5px 0 15px 0 rgba(0,0,0,.15);

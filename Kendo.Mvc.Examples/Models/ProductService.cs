@@ -26,7 +26,7 @@ namespace Kendo.Mvc.Examples.Models
                     ProductID = product.ProductID,
                     ProductName = product.ProductName,
                     UnitPrice = product.UnitPrice.HasValue ? product.UnitPrice.Value : default(decimal),
-                    UnitsInStock = product.UnitsInStock.HasValue ? product.UnitsInStock.Value : default(short),
+                    UnitsInStock = product.UnitsInStock.HasValue ? product.UnitsInStock.Value : default(int),
                     QuantityPerUnit = product.QuantityPerUnit,
                     Discontinued = product.Discontinued,
                     UnitsOnOrder = product.UnitsOnOrder.HasValue ? product.UnitsOnOrder.Value : default(int),
@@ -64,7 +64,7 @@ namespace Kendo.Mvc.Examples.Models
             entities.Products.Add(entity);
             entities.SaveChanges();
 
-            product.ProductID = entity.ProductID;
+            product.ProductID = (int)entity.ProductID;
         }
 
         public void Update(ProductViewModel product)
@@ -98,12 +98,12 @@ namespace Kendo.Mvc.Examples.Models
 
             entities.Products.Remove(entity);
 
-            //var orderDetails = entities.Order_Details.Where(pd => pd.ProductID == entity.ProductID);
+            var orderDetails = entities.OrderDetails.Where(pd => pd.ProductID == entity.ProductID);
 
-            //foreach (var orderDetail in orderDetails)
-            //{
-            //    entities.Order_Details.Remove(orderDetail);
-            //}
+            foreach (var orderDetail in orderDetails)
+            {
+                entities.OrderDetails.Remove(orderDetail);
+            }
 
             entities.SaveChanges();
         }
