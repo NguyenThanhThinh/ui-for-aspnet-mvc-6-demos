@@ -160,7 +160,7 @@
           "lib/net45/System.Interactive.Async.dll": {}
         }
       },
-      "Kendo.Mvc/2016.1.112": {
+      "Kendo.Mvc/2016.1.301": {
         "type": "package",
         "dependencies": {
           "EntityFramework.Commands": "7.0.0-rc1-final",
@@ -2214,7 +2214,7 @@
           "lib/portable-windows8+net45+wp8/System.Interactive.Async.dll": {}
         }
       },
-      "Kendo.Mvc/2016.1.112": {
+      "Kendo.Mvc/2016.1.301": {
         "type": "package",
         "dependencies": {
           "EntityFramework.Commands": "7.0.0-rc1-final",
@@ -4955,7 +4955,7 @@
           "lib/net45/System.Interactive.Async.dll": {}
         }
       },
-      "Kendo.Mvc/2016.1.112": {
+      "Kendo.Mvc/2016.1.301": {
         "type": "package",
         "dependencies": {
           "EntityFramework.Commands": "7.0.0-rc1-final",
@@ -7053,7 +7053,7 @@
           "lib/net45/System.Interactive.Async.dll": {}
         }
       },
-      "Kendo.Mvc/2016.1.112": {
+      "Kendo.Mvc/2016.1.301": {
         "type": "package",
         "dependencies": {
           "EntityFramework.Commands": "7.0.0-rc1-final",
@@ -9113,7 +9113,7 @@
           "lib/portable-windows8+net45+wp8/System.Interactive.Async.dll": {}
         }
       },
-      "Kendo.Mvc/2016.1.112": {
+      "Kendo.Mvc/2016.1.301": {
         "type": "package",
         "dependencies": {
           "EntityFramework.Commands": "7.0.0-rc1-final",
@@ -12258,7 +12258,7 @@
           "lib/portable-windows8+net45+wp8/System.Interactive.Async.dll": {}
         }
       },
-      "Kendo.Mvc/2016.1.112": {
+      "Kendo.Mvc/2016.1.301": {
         "type": "package",
         "dependencies": {
           "EntityFramework.Commands": "7.0.0-rc1-final",
@@ -15409,12 +15409,12 @@
         "lib/portable-windows8+net45+wp8/System.Interactive.Async.XML"
       ]
     },
-    "Kendo.Mvc/2016.1.112": {
+    "Kendo.Mvc/2016.1.301": {
       "type": "package",
-      "sha512": "DX6vF9btJzK6IkKpWrqjQCqfL0b4DQ6K/Pmh5jeOtAnLEL7VZIYjbUD33UOpK82pLZrAVcCskZy7OMt594Zwmg==",
+      "sha512": "P2xUYfFJz2W6rfUML1ddq5yFaAx/q1w7g8DjXqa3fuLYMV93Z2YOKao94lmH189JWkxXbTIPEFzr7GhLlBV05w==",
       "files": [
-        "Kendo.Mvc.2016.1.112.nupkg",
-        "Kendo.Mvc.2016.1.112.nupkg.sha512",
+        "Kendo.Mvc.2016.1.301.nupkg",
+        "Kendo.Mvc.2016.1.301.nupkg.sha512",
         "Kendo.Mvc.nuspec",
         "lib/dnx451/bg-BG/Kendo.Mvc.resources.dll",
         "lib/dnx451/cs-CZ/Kendo.Mvc.resources.dll",
@@ -20923,7 +20923,7 @@
       "Microsoft.Extensions.Logging.Console >= 1.0.0-rc1-final",
       "Microsoft.Extensions.Logging.Debug >= 1.0.0-rc1-final",
       "Microsoft.AspNet.Routing >= 1.0.0-rc1-final",
-      "Kendo.Mvc >= 2016.1.112"
+      "Kendo.Mvc >= 2016.1.301"
     ],
     "DNX,Version=v4.5.1": [
       "Microsoft.AspNet.Routing >= 1.0.0-rc1-final"
