@@ -13,3 +13,4 @@ This repository will remain live until ASP.NET Core 1.0 goes official.
 * [Beta 7](https://github.com/telerik/ui-for-aspnet-mvc-6-demos/releases/tag/beta-7)
 * [Beta 8](https://github.com/telerik/ui-for-aspnet-mvc-6-demos/releases/tag/beta-8)
 * [RC1](https://github.com/telerik/ui-for-aspnet-mvc-6-demos/releases/tag/rc1)
+* [RC2](https://github.com/telerik/ui-for-aspnet-mvc-6-demos/releases/tag/rc2)

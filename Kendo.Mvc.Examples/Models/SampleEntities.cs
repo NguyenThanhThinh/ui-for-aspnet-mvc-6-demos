@@ -1,11 +1,16 @@
-using Microsoft.Data.Entity;
-using Microsoft.Data.Entity.Metadata;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using System.IO;
 
 namespace Kendo.Mvc.Examples.Models
 {
     public partial class SampleEntitiesDataContext : DbContext
     {
+        public SampleEntitiesDataContext()
+            : base(new DbContextOptions<SampleEntitiesDataContext>())
+        {
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             var dataDirectory = Path.Combine(Startup.WebRootPath, "App_Data");
@@ -323,7 +328,7 @@ namespace Kendo.Mvc.Examples.Models
 
             modelBuilder.Entity<Intraday>(entity =>
             {
-                entity.ForSqliteToTable("Intraday");
+                entity.ForSqliteToTable("Intradays");
 
                 entity.HasIndex(e => e.Date).HasName("IX_Intraday_Date");
 
@@ -798,6 +803,49 @@ namespace Kendo.Mvc.Examples.Models
 
                 entity.Property(e => e.Pop2050).HasColumnType("INT");
             });
+
+            modelBuilder.Entity<Weather>(entity =>
+            {
+                entity.ForSqliteToTable("Weather");
+
+                entity.HasKey(e => e.ID);
+
+                entity.Property(e => e.Station)
+                    .IsRequired()
+                    .HasColumnType("VARCHAR(255)");
+
+                entity.Property(e => e.Date)
+                    .IsRequired()
+                    .HasColumnType("DATETIME");
+
+                entity.Property(e => e.TMax)
+                    .IsRequired()
+                    .HasColumnType("FLOAT(5,2)");
+
+                entity.Property(e => e.TMin)
+                    .IsRequired()
+                    .HasColumnType("FLOAT(5,2)");
+
+                entity.Property(e => e.Wind)
+                    .IsRequired()
+                    .HasColumnType("FLOAT(5,2)");
+
+                entity.Property(e => e.Gust)
+                    .HasColumnType("FLOAT(5,2)")
+                    .HasDefaultValueSql("NULL");
+
+                entity.Property(e => e.Rain)
+                    .IsRequired()
+                    .HasColumnType("FLOAT(5,2)");
+
+                entity.Property(e => e.Snow)
+                    .HasColumnType("FLOAT(5,2)")
+                    .HasDefaultValueSql("NULL");
+
+                entity.Property(e => e.Events)
+                    .HasColumnType("VARCHAR(255)")
+                    .HasDefaultValueSql("NULL");
+            });
         }
 
         public virtual DbSet<Category> Categories { get; set; }
@@ -811,7 +859,7 @@ namespace Kendo.Mvc.Examples.Models
         public virtual DbSet<GanttResourceAssignment> GanttResourceAssignments { get; set; }
         public virtual DbSet<GanttResource> GanttResources { get; set; }
         public virtual DbSet<GanttTask> GanttTasks { get; set; }
-        public virtual DbSet<Intraday> Intraday { get; set; }
+        public virtual DbSet<Intraday> Intradays { get; set; }
         public virtual DbSet<MeetingAttendee> MeetingAttendees { get; set; }
         public virtual DbSet<Meeting> Meetings { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
@@ -821,12 +869,11 @@ namespace Kendo.Mvc.Examples.Models
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Region> Region { get; set; }
         public virtual DbSet<Shipper> Shippers { get; set; }
-        public virtual DbSet<Stock> Stock { get; set; }
+        public virtual DbSet<Stock> Stocks { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<Task> Tasks { get; set; }
         public virtual DbSet<Territory> Territories { get; set; }
         public virtual DbSet<UrbanArea> UrbanAreas { get; set; }
-
-        // Unable to generate entity type for table 'Weather'. Please see the warning messages.
+        public virtual DbSet<Weather> Weather { get; set; }
     }
 }

@@ -56,11 +56,11 @@
 /* Widgets icons font */
 @font-face {
   font-family: 'widgets';
-  src: url('fonts/widgets-v3.eot');
-  src: url('fonts/widgets-v3.eot?#iefix') format('embedded-opentype'),
-       url('fonts/widgets-v3.woff') format('woff'),
-       url('fonts/widgets-v3.ttf') format('truetype'),
-       url('fonts/widgets-v3.svg') format('svg');
+  src: url('fonts/widgets-v4.eot');
+  src: url('fonts/widgets-v4.eot?#iefix') format('embedded-opentype'),
+       url('fonts/widgets-v4.woff') format('woff'),
+       url('fonts/widgets-v4.ttf') format('truetype'),
+       url('fonts/widgets-v4.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -578,6 +578,9 @@ div.submenu-box ol {
 .comboBoxIcon:after { content: '\e848'; }
 .responsivePanelIcon:after { content: '\e849'; }
 .spreadsheetIcon:after { content: '\e84b'; }
+.wordprocessingIcon:after { content: '\e84c'; }
+.spreadrocessingIcon:after { content: '\e84d'; }
+.pdfIcon:after { content: '\e84e'; }
 
 .themechooser
 {
@@ -1844,20 +1847,8 @@ ul.keyboard-legend li a {
     margin-left: 1.667em;
 }
 
-.kendo-ui.logo {
-  width: 198px;
-}
-
-.aspnet-mvc.logo {
-  width: 397px;
-}
-
-.php-ui.logo {
-  width: 298px;
-}
-
-.jsp-ui.logo {
-  width: 290px;
+.logo {
+  height: 35px;
 }
 
 #logo-bar span {
@@ -1881,7 +1872,7 @@ ul.keyboard-legend li a {
     background-clip: padding-box;
     position: relative;
     display: inline-block;
-    padding: 0.667em 2.000em;
+    padding: 0.6em 2.000em 0.5em;
     line-height: 0.933em;
     transition-property: background-color, color;
     transition-duration: 0.2s;
@@ -1942,20 +1933,13 @@ ul.keyboard-legend li a {
 a.footer-links:hover,
 #overview a.footer-links:hover {
     color: #49c3fb;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .quick-links {
      padding-top: 20px;
      padding-bottom: 10px;
      padding-left: 20px;
-}
-
-#telerik-logo {
-    background: transparent url(icon-telerik-badge.png) 0 0 no-repeat;
-    width: 30px;
-    height: 27px;
-    float: left;
 }
 
 .copyright {
@@ -1966,8 +1950,13 @@ a.footer-links:hover,
 
 .copyright p {
     font-size: 12px;
-    margin-left: 40px;
     color: #818692;
+}
+
+.copyright a,
+#overview .copyright a:hover {
+  color: #ccc;
+  text-decoration: none;
 }
 
 /* Root navigation */
@@ -2500,6 +2489,10 @@ a.footer-links:hover,
     font: 400 28px/1 "Roboto Slab", Arial, Helvetica, sans-serif;
     text-align: left;
     padding: 2.5em 0 0.700em 0;
+}
+
+#overview h1 sup {
+    font-size: .5em;
 }
 
 #overview a:hover {

@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNet.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Kendo.Mvc.Examples.Controllers
 {
-	public partial class Area_ChartsController : Controller
+    public partial class Area_ChartsController : Controller
     {
-		public IActionResult Index()
+        public IActionResult Index()
         {
             return View();
         }
