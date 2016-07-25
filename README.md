@@ -1,16 +1,10 @@
 # Telerik UI for ASP.NET Core 1.0 MVC demos
 
-### Description
-This repository contains the Telerik UI for ASP.NET MVC examples built against ASP.NET Core 1.0 preliminary releases (betas and RCs).
+### Deprecation Notice
+This repository used to contain Telerik UI for ASP.NET Core 1.0 MVC Beta Demos.
+We used it to ship up-to-date examples with the latest ASP.NET Core pre-releases.
 
-Normally we distribute this example project via our bundles, but the fast-paced release cycle of ASP.NET Core 1.0 MVC makes this impractical.
+The repository has been deprecated in favor of our official distribution packages.
 
-Furthermore, publishing this in the open might be useful for anyone that is building sites agains the ASP.NET Core 1.0 MVC preliminary builds.
+See the [Documentation](http://docs.telerik.com/kendo-ui/aspnet-mvc/mvc-6/introduction).
 
-This repository will remain live until ASP.NET Core 1.0 goes official.
-
-### Releases
-* [Beta 7](https://github.com/telerik/ui-for-aspnet-mvc-6-demos/releases/tag/beta-7)
-* [Beta 8](https://github.com/telerik/ui-for-aspnet-mvc-6-demos/releases/tag/beta-8)
-* [RC1](https://github.com/telerik/ui-for-aspnet-mvc-6-demos/releases/tag/rc1)
-* [RC2](https://github.com/telerik/ui-for-aspnet-mvc-6-demos/releases/tag/rc2-final)

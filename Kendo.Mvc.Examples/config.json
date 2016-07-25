@@ -1,7 +1,0 @@
-﻿{
-   "Data": {
-        "DefaultConnection": {            
-            "ConnectionString": "Server=(localdb)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Sample.mdf;Integrated Security=True;"
-        }
-    }  
-}
